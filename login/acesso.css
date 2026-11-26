@@ -1,0 +1,221 @@
+:root{
+  --preto-carvao: #121212;
+  --preto: #181818;
+  --carvao: #202020;
+  --laranja-vibrante: #FF5A1F;
+  --amarelo: #FFC21A;
+  --cinza-claro: #EDEDED;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;  
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--preto-carvao);
+  /*background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--preto-carvao) 10%, transparent),
+      color-mix(in srgb, var(--laranja-vibrante) 40%, transparent)
+    ),
+    url('../visual/academia.jpg');*/
+  background-size: cover; /*  faz a imagem de fundo cobrir toda a área do elemento */
+  background-position: center; /* centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* evita que a imagem de fundo se repita */
+  background-attachment: fixed; /* mantém a imagem de fundo fixa durante o scroll */
+  color: var(--cinza-claro); /* define a cor do texto como cinza claro */
+}
+
+/*.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}*/
+
+header {
+  margin: 0;
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--carvao);
+  border-bottom: 1px solid var(--laranja-vibrante);  
+}
+header span {
+  font-size: 1.60rem;
+  font-weight: bold;
+  color: var(--laranja-vibrante);
+  text-transform: uppercase;
+}
+div.img-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.texto-logo {
+  display: flex;
+  flex-direction: column; /* define a direção dos elementos filhos como coluna */
+  justify-content: center;
+}
+.name {
+  font-size: 1.60rem;
+  line-height: 1; /* define a altura da linha como 1 para evitar espaçamento extra */
+}
+.tagline {
+  color:var(--laranja-vibrante);
+  margin-top: 6px; /* define a margem superior para separar a tagline do nome */
+  font-weight: bold; /* define o peso da fonte como negrito */
+}
+.nome {
+  font-size: 1.60rem;
+  font-weight: bold;
+  color: var(--laranja-vibrante);
+  text-transform: uppercase;
+}
+.menu-lista {
+  list-style: none; /* remove os marcadores da lista */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.menu-lista li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: var(--cinza-claro); 
+  font-weight: bold; /* define o peso da fonte como negrito */
+  transition: color 0.3s ease; /* adiciona uma transição suave para a mudança de cor */
+}
+.menu-lista li a:hover {
+  color: var(--laranja-vibrante); /* deita o texto lincado na cor laranja quando o mouse passa por cima */
+}
+
+.treino {
+    text-align: center;
+
+}
+
+.tabs {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  border-bottom: 1px solid #2e2e2e;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  background: var(--surface);
+  color: var(--amarelo);
+  border: 1px solid #333;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.2s;
+  margin: 0 auto;
+}
+
+.tab-btn.active {
+  background: var(--laranja-vibrante);
+  color: var(--cinza-claro);
+  border-color: var(--cinza-claro);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+.cards-grid {
+  display: grid;
+  display: flex; overflow-x: auto; 
+  scroll-snap-type: x mandatory;
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--laranja-vibrante);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  min-width: 380px; /*define o tamanho do card*/
+  flex: 0 0 380px;
+  margin: 0 auto;
+  scroll-snap-align: start;
+  align-items: center;
+  
+}
+
+
+
+.card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card-body h2 {
+  font-size: 1.15rem;
+  text-align: justify;
+}
+
+.badge {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.card-body p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #d4d4d4;
+}
+
+.tip {
+  background: var(--carvao);
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  margin-top: auto;
+}
+
+.tab-content {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeSlideIn 0.35s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 

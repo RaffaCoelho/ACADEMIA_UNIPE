@@ -1,0 +1,191 @@
+:root{
+  --preto-carvao: #121212;
+  --preto: #181818;
+  --carvao: #202020;
+  --laranja-vibrante: #FF5A1F;
+  --amarelo: #FFC21A;
+  --cinza-claro: #EDEDED;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--preto-carvao);
+ /* background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--preto-carvao) 10%, transparent),
+      color-mix(in srgb, var(--laranja-vibrante) 40%, transparent)
+    ),
+    url('../visual/academia.jpg');*/
+  background-size: cover; /*  faz a imagem de fundo cobrir toda a área do elemento */
+  background-position: center; /* centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* evita que a imagem de fundo se repita */
+  background-attachment: fixed; /* mantém a imagem de fundo fixa durante o scroll */
+  color: var(--cinza-claro); /* define a cor do texto como cinza claro */
+}
+header {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--carvao);
+  border-bottom: 1px solid var(--laranja-vibrante);  
+}
+header span {
+  font-size: 1.60rem;
+  font-weight: bold;
+  color: var(--laranja-vibrante);
+  text-transform: uppercase;
+}
+div.img-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.texto-logo {
+  display: flex;
+  flex-direction: column; /* define a direção dos elementos filhos como coluna */
+  justify-content: center;
+}
+.name {
+  font-size: 1.60rem;
+  line-height: 1; /* define a altura da linha como 1 para evitar espaçamento extra */
+}
+.tagline {
+  color:var(--laranja-vibrante);
+  margin-top: 6px; /* define a margem superior para separar a tagline do nome */
+  font-weight: bold; /* define o peso da fonte como negrito */
+}
+.nome {
+  font-size: 1.60rem;
+  font-weight: bold;
+  color: var(--laranja-vibrante);
+  text-transform: uppercase;
+}
+.menu-lista {
+  list-style: none; /* remove os marcadores da lista */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.menu-lista li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: var(--cinza-claro); 
+  font-weight: bold; /* define o peso da fonte como negrito */
+  transition: color 0.3s ease; /* adiciona uma transição suave para a mudança de cor */
+}
+.menu-lista li a:hover {
+  color: var(--laranja-vibrante); /* deita o texto lincado na cor laranja quando o mouse passa por cima */
+}
+.login-form {
+  background-color: #222;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 400px;
+    border-radius: 15px;
+    border-top: #FF5A1F 5px solid;
+
+  }
+  h2{
+    text-align: center;
+  }
+input{
+  width: 100%; /* define a largura do input como 100% do contêiner pai */
+  padding: 0.75rem 0.9rem; /* define o preenchimento interno do input */
+  border-radius: 20px; /* arredonda os cantos do input */
+  border: 1px solid var(--laranja-vibrante) ;  /* define a borda do input com uma cor */
+  color: #EDEDED;
+   font-family: 'Plus Jakarta Sans', sans-serif; /* define a família da fonte do botão */
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--preto); /* define a cor de fundo do input */
+}
+label {
+  display: block; /* define o label como um bloco para ocupar toda a largura disponível */
+  margin-bottom: 10px; /* adiciona uma margem inferior ao label */
+   font-family: 'Plus Jakarta Sans', sans-serif; /* define a família da fonte do botão */
+  font-weight: bold; /* define o peso da fonte como negrito */
+  color: var(--laranja-vibrante); /* define a cor do texto do label */
+}
+.input-password {
+  margin-bottom: 20px; /* adiciona uma margem inferior ao input de senha */
+  padding-right: 4.5rem; /* adiciona um preenchimento à direita para o ícone de exibição de senha */
+  font-family: 'Plus Jakarta Sans', sans-serif; /* define a família da fonte do botão */
+}
+.botao {
+  width: 100%; /* define a largura do botão como 100% do contêiner pai */
+  padding: 0.75rem; /* define o preenchimento interno do botão */
+  border-radius: 20px; /* arredonda os cantos do botão */
+  border: none; /* remove a borda do botão */
+  background-color: var(--laranja-vibrante); /* define a cor de fundo do botão */
+  color: var(--cinza-claro); /* define a cor do texto do botão */
+  font-size: 1rem; /* define o tamanho da fonte do botão */
+  font-family: 'Plus Jakarta Sans', sans-serif; /* define a família da fonte do botão */
+  font-weight: bold; /* define o peso da fonte como negrito */
+  cursor: pointer; /* muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* adiciona uma transição suave para a mudança de cor de fundo */
+}
+.botao:hover{
+  background-color: var(--preto); /* muda a cor de fundo do botão ao passar o mouse */
+  box-shadow: 0 4px 8px var(--preto-carvao)0.2; /* adiciona uma sombra ao botão ao passar o mouse */
+}
+.esqueci-senha {
+  display: block; /* define o link como um bloco para ocupar toda a largura disponível */
+  margin-top: 10px; /* adiciona uma margem superior ao link */
+  text-align: right; /* alinha o texto do link à direita */
+  color: var(--laranja-vibrante); /* define a cor do texto do link */
+  text-decoration: none; /* remove o sublinhado do link */
+  font-size: 0.9rem; /* define o tamanho da fonte do link */
+  transition: color 0.3s ease; /* adiciona uma transição suave para a mudança de cor */
+}
+.esqueci-senha:hover {
+  color: var(--amarelo); /* muda a cor do link ao passar o mouse */
+
+}
+.input-error {
+  margin-bottom: 20px; /* adiciona uma margem inferior ao input de senha */
+  padding-right: 4.5rem; /* adiciona um preenchimento à direita para o ícone de exibição de senha */
+  font-family: 'Plus Jakarta Sans', sans-serif; /* define a família da fonte do000 botão */
+  display: block;
+  font-weight: bold;
+  color: var(--amarelo); /* define a cor do texto do label */
+
+}
+.cadastro-link {
+
+  display: block; /* define o link como um bloco para ocupar toda a largura disponível */
+  margin-top: 10px; /* adiciona uma margem superior ao link */
+  transition: color 0.3s ease;
+  color: var(--laranja-vibrante);
+  text-decoration: none;
+  font-size: 0.9rem; /* define o tamanho da fonte do link */
+
+}
+.cadastro-link:hover {
+  color: var(--amarelo); /* muda a cor do link ao passar o mouse */
+}
+.cadastro{  
+  text-align: center; /* centraliza o texto do rodapé */
+  padding: 20px; /* adiciona um preenchimento interno ao rodapé */
+  background-color: var(--carvao); /* define a cor de fundo do rodapé */
+  color: var(--cinza-claro); /* define a cor do texto do rodapé */
+  font-size: 0.9rem; /* define o tamanho da fonte do rodapé */
+  border-radius: 10px; /* arredonda os cantos do rodapé */
+}
+.rodape{
+  text-align: center; /* centraliza o texto do rodapé */
+  padding: 20px; /* adiciona um preenchimento interno ao rodapé */
+  background-color: var(--carvao); /* define a cor de fundo do rodapé */
+  color: var(--cinza-claro); /* define a cor do texto do rodapé */
+  font-size: 0.9rem; /* define o tamanho da fonte do rodapé */
+  position: fixed; /* fixa o rodapé na parte inferior da página */
+  bottom: 0; /* posiciona o rodapé na parte inferior da página */
+  width: 100%; /* define a largura do rodapé como 100% da página */
+  border-top: 1px solid var(--laranja-vibrante); /* adiciona uma borda superior ao rodapé */
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Academia UNIPE</title>
+  <link rel="stylesheet" href="login.css">
+  
+</head>
+<body class="painel-fundo">
+  <div class="topo-login">
+     <header>
+        <div class="img-logo">
+            <a href="../home/home.html" target="_blank" rel="noopener noreferrer">
+              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
+            </a>
+            <div class="texto-logo">
+              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
+              <p class="tagline">TREINO • FORÇA • FOCO</p>
+            </div>
+        </div>
+        <nav class="menu">
+            <ul class="menu-lista">
+                <li><a href="../home/home.html">Home</a></li>
+                <li><a href="../aulas/aulas.css">Aulas</a></li>
+                <li><a href="../servicos/serviços.html">Serviços</a></li>
+                <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+
+                
+            </ul>
+        </nav>
+    </header>  
+  </div>
+<br><br>
+  <div>
+    <form class="login-form" action="acesso.html" id="loginForm" method="POST">
+      <h2>Login</h2><br>
+      <label for="username">USUARIO</label>
+      <input type="text" id="username" name="username" placeholder="USUARIO"  ><br><br>
+      <span class="input-error" id="usernameError"></span>
+      <label for="password">SENHA</label>
+      <input type="password" id="password" name="password" class="input-password" placeholder="SENHA" ><br>
+      <span class="input-error" id="passwordError"></span>
+      <a href="esqueci-senha.html" class="esqueci-senha">Esqueci minha senha</a><br><br>
+
+      
+      <button class="botao" type="submit">Entrar</button>
+      <br><br>
+      
+      <p class="cadastro">Não tem acesso? <a class="cadastro-link" href="CADASTRO.html">Matricule-se</a></p>
+    </form><br><br><br><br>
+  </div>
+  
+
+  
+    <footer class="rodape">
+      <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+<script src="login.js"></script>

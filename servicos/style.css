@@ -1,0 +1,129 @@
+
+:root{
+  --preto-carvao: #121212;
+  --preto: #181818;
+  --carvao: #202020;
+  --laranja-vibrante: #FF5A1F;
+  --amarelo: #FFC21A;
+  --cinza-claro: #EDEDED;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+    background-color: #121212;
+    color: #EDEDED;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+header {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--carvao);
+  border-bottom: 1px solid var(--laranja-vibrante);  
+}
+header span {
+  font-size: 1.60rem;
+  font-weight: bold;
+  color: var(--laranja-vibrante);
+  text-transform: uppercase;
+}
+div.img-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.texto-logo {
+  display: flex;
+  flex-direction: column; /* define a direção dos elementos filhos como coluna */
+  justify-content: center;
+}
+.name {
+  font-size: 1.60rem;
+  line-height: 1; /* define a altura da linha como 1 para evitar espaçamento extra */
+}
+.tagline {
+  color:var(--laranja-vibrante);
+  margin-top: 6px; /* define a margem superior para separar a tagline do nome */
+  font-weight: bold; /* define o peso da fonte como negrito */
+}
+.nome {
+  font-size: 1.60rem;
+  font-weight: bold;
+  color: var(--laranja-vibrante);
+  text-transform: uppercase;
+}
+.menu-lista {
+  list-style: none; /* remove os marcadores da lista */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.menu-lista li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: var(--cinza-claro); 
+  font-weight: bold; /* define o peso da fonte como negrito */
+  transition: color 0.3s ease; /* adiciona uma transição suave para a mudança de cor */
+}
+.menu-lista li a:hover {
+  color: var(--laranja-vibrante); /* deita o texto lincado na cor laranja quando o mouse passa por cima */
+}
+
+
+#sobre {
+    background-color: #222222;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    border-top: 4px solid #FF5A1F;
+}
+
+
+#sobre h2 {
+    color: #FF5A1F;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+#sobre p {
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/*#sobre a {
+    display: block;
+    background-color: #FF5A1F;
+    color: #121212;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    max-width: 200px;
+    margin: 30px auto 0;
+    border-radius: 8px;
+}
+
+
+#sobre a:hover {
+    background-color: #FFC21A;
+}*/
+.rodape{
+  text-align: center; /* centraliza o texto do rodapé */
+  padding: 20px; /* adiciona um preenchimento interno ao rodapé */
+  background-color: var(--carvao); /* define a cor de fundo do rodapé */
+  color: var(--cinza-claro); /* define a cor do texto do rodapé */
+  font-size: 0.9rem; /* define o tamanho da fonte do rodapé */
+  position: fixed; /* fixa o rodapé na parte inferior da página */
+  bottom: 0; /* posiciona o rodapé na parte inferior da página */
+  width: 100%; /* define a largura do rodapé como 100% da página */
+  border-top: 1px solid var(--laranja-vibrante); /* adiciona uma borda superior ao rodapé */
+}
