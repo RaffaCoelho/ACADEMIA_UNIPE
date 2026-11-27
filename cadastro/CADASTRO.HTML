@@ -1,65 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
-    <title>Cadastro e Contatos - Academia UNIPE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro — Academia UNIPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <div class="topo-login">
-     <header>
-        <div class="img-logo">
-            <a href="../home/home.html" target="_blank" rel="noopener noreferrer">
-              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
-            </a>
-            <div class="texto-logo">
-              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
-              <p class="tagline">TREINO • FORÇA • FOCO</p>
-            </div>
+  <div class="topo-site">
+    <header class="cabecalho">
+      <div class="img-logo">
+        <a href="../home/home.html">
+          <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="52" height="52">
+        </a>
+        <div class="texto-logo">
+          <span class="name">ACADEMIA <span class="nome">UNIPE</span></span>
+          <p class="tagline">TREINO • FORÇA • FOCO</p>
         </div>
-        <nav class="menu">
-            <ul class="menu-lista">
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="../aulas/aulas.css">Aulas</a></li>
-                
-            </ul>
-        </nav>
-        
-    </header>  
+      </div>
 
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <ul class="menu-lista">
+          <li><a href="../home/home.html">Home</a></li>
+          <li><a href="../aulas/aulas.html">Aulas</a></li>
+          <li><a href="../servicos/serviços.html">Serviços</a></li>
+          <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+        </ul>
+        <div class="menu-acoes">
+          <a href="../login/login.html" class="nav-btn-login">Entrar</a>
+        </div>
+      </nav>
+    </header>
   </div>
-   
-    <section id="cadastro">
-            <h2>CADASTRO DO ALUNO</h2>
 
-            <form>
-                <label for="nome">Nome do Aluno:</label>
-                <input type="text" id="nome" name="nome" required>
+  <main class="area-cadastro">
+    <section id="cadastro" class="cadastro-card">
+      <span class="selo">MATRÍCULA ONLINE</span>
+      <h1>Cadastro do Aluno</h1>
+      <p class="subtitulo-form">Preencha seus dados para iniciar na Academia UNIPE.</p>
 
-                <br><br>
+      <form id="cadastroForm" novalidate>
+        <div class="campo-grupo">
+          <label for="nome">Nome do Aluno</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+          <span class="erro-campo" id="nomeErro"></span>
+        </div>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required>
+        <div class="campo-grupo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+          <span class="erro-campo" id="emailErro"></span>
+        </div>
 
-                <br><br>
+        <div class="campo-grupo">
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(83) 90000-0000" maxlength="15" required>
+          <span class="erro-campo" id="telefoneErro"></span>
+        </div>
 
-                <label for="telef'ne">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" required>
+        <button type="submit" class="btn btn-primary full-width">Cadastrar</button>
+        <div class="mensagem-retorno" id="retornoCadastro" role="status" aria-live="polite"></div>
+      </form>
 
-                <br><br>
-
-                <button type="submit">Cadastrar</button>
-            </form>
+      <p class="rodape-card">Já possui conta? <a href="../login/login.html">Fazer login</a></p>
     </section>
+  </main>
 
-    
+  <footer class="rodape">
+    <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+  </footer>
 
-
-        
-     <footer class="rodape">
-      <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
-    </footer>
+  <script src="cadastro.js"></script>
 </body>
 </html>

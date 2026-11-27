@@ -3,51 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plano de Treino</title>
+  <title>Plano de Treino — Academia UNIPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="acesso.css">
 </head>
-<body>
-  
-   <div class="topo-login">
-     <header>
-        <div class="img-logo">
-            <a href="index.html" target="_blank" rel="noopener noreferrer">
-              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
-            </a>
-            <div class="texto-logo">
-              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
-              <p class="tagline">TREINO • FORÇA • FOCO</p>
-            </div>
+<body class="painel-treino">
+  <div class="topo-site">
+    <header class="cabecalho">
+      <div class="img-logo">
+        <a href="../home/home.html">
+          <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="52" height="52">
+        </a>
+        <div class="texto-logo">
+          <span class="name">ACADEMIA <span class="nome">UNIPE</span></span>
+          <p class="tagline">TREINO • FORÇA • FOCO</p>
         </div>
-        <nav class="menu">
-            <ul class="menu-lista">
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="CADASTRO.html">Contato</a></li>
-                <li><a href="Aulas.html">Aulas</a></li>
-               
-            </ul>
-        </nav>
-    </header>  
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <ul class="menu-lista">
+          <li><a href="../home/home.html">Home</a></li>
+          <li><a href="../aulas/aulas.html">Aulas</a></li>
+          <li><a href="../servicos/serviços.html">Serviços</a></li>
+          <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+        </ul>
+        <div class="menu-acoes">
+          <a href="../login/login.html" class="nav-btn-login">Sair</a>
+          <a href="../cadastro/CADASTRO.HTML" class="nav-btn-cadastro">Matricule-se</a>
+        </div>
+      </nav>
+    </header>
   </div>
-    <div class="treino"><br><br>
-    <h1>Area do aluno — Academia UNIPE</h1>
-    <p>3 sessões semanais • 40 a 50 minutos • Foco em condicionamento</p>
-    </div><br><br>
-    
-    <nav class="tabs" role="tablist">
-      <button class="tab-btn active" data-tab="dia-a">Dia A - Agachamento e Empurrar</button>
-      <button class="tab-btn" data-tab="dia-b">Dia B - Puxar e Quadril</button>
-      <button class="tab-btn" data-tab="dia-c">Dia C - Força e Condicionamento</button>
+
+  <main class="container-treino">
+    <section class="treino-cabecalho">
+      <div class="status-linha">
+        <span class="selo">PLANO ATIVO</span>
+        <span class="status-funcionamento" id="statusFuncionamento">● Verificando horário...</span>
+      </div>
+      <h1>Área do Aluno — Academia UNIPE</h1>
+      <p>3 sessões semanais • 40 a 50 minutos • Foco em condicionamento</p>
+    </section>
+
+    <nav class="tabs" role="tablist" aria-label="Dias de treino">
+      <button type="button" class="tab-btn active" data-tab="dia-a" role="tab" aria-selected="true">Dia A — Agachamento e Empurrar</button>
+      <button type="button" class="tab-btn" data-tab="dia-b" role="tab" aria-selected="false">Dia B — Puxar e Quadril</button>
+      <button type="button" class="tab-btn" data-tab="dia-c" role="tab" aria-selected="false">Dia C — Força e Condicionamento</button>
     </nav>
 
-  
-    <section id="dia-a" class="tab-content active">
+    <section id="dia-a" class="tab-content active" role="tabpanel">
       <div class="cards-grid">
         <article class="card">
-          <img src="../visual/agachamento.jpeg" class="img" alt="Agachamento Cálice">
+          <img src="../visual/agachamento.jpeg" class="img" alt="Agachamento Cálice com Halter">
           <div class="card-body">
             <h2>Agachamento Cálice com Halter</h2>
-            <span class="badge">3 a 4 séries x 10-12 reps | 60s descanso</span>
+            <span class="badge">3 a 4 séries x 10–12 reps • 60s descanso</span>
             <p>Segure o halter junto ao peito com os cotovelos para baixo e desça mantendo o tronco estável.</p>
             <div class="tip">
               <strong>Dica:</strong> Faça 1 a 2 séries leves de aquecimento antes da carga principal.
@@ -56,91 +74,91 @@
         </article>
 
         <article class="card">
-          <img src="../visual/supino.jpeg" alt="Supino Reto">
+          <img src="../visual/supino.jpeg" alt="Supino Reto com Halteres">
           <div class="card-body">
             <h2>Supino Reto com Halteres</h2>
-            <span class="badge">3 séries x 10-12 reps | 60s descanso</span>
+            <span class="badge">3 séries x 10–12 reps • 60s descanso</span>
             <p>Deite-se no banco com pés firmes no chão, empurre os halteres e controle a descida.</p>
           </div>
         </article>
 
         <article class="card">
-          <img src="../visual/prancha.jpeg" alt="Prancha Abdominal">
+          <img src="../visual/prancha.jpeg" alt="Prancha Abdominal Isométrica">
           <div class="card-body">
             <h2>Prancha Abdominal Isométrica</h2>
-            <span class="badge">3 séries x 30-45s | 45s descanso</span>
+            <span class="badge">3 séries x 30–45s • 45s descanso</span>
             <p>Apoie os antebraços no solo e mantenha o corpo alinhado contraindo abdômen e glúteos.</p>
           </div>
         </article>
       </div>
     </section>
 
-    
-    <section id="dia-b" class="tab-content">
+    <section id="dia-b" class="tab-content" role="tabpanel">
       <div class="cards-grid">
         <article class="card">
-          <img src="../visual/puxada.jpeg" alt="Puxada Frontal">
+          <img src="../visual/puxada.jpeg" alt="Puxada Frontal na Polia Alta">
           <div class="card-body">
             <h2>Puxada Frontal na Polia Alta</h2>
-            <span class="badge">3 a 4 séries x 10-12 reps | 60s descanso</span>
+            <span class="badge">3 a 4 séries x 10–12 reps • 60s descanso</span>
             <p>Puxe a barra em direção ao peito iniciando o movimento pelas escápulas.</p>
           </div>
         </article>
 
         <article class="card">
-          <img src="../visual/levantamento.jpeg" alt="Puxada Frontal">
+          <img src="../visual/levantamento.jpeg" alt="Levantamento Terra Romeno com Halteres">
           <div class="card-body">
             <h2>Levantamento Terra Romeno com Halteres</h2>
-            <span class="badge">3 séries x 10-12 reps | 60s descanso</span>
-            <p>Com joelhos levemente destravados, projete o quadril para trás mantendo a coluna neutra e os halteres próximos às pernas</p>
+            <span class="badge">3 séries x 10–12 reps • 60s descanso</span>
+            <p>Com joelhos levemente destravados, projete o quadril para trás mantendo a coluna neutra e os halteres próximos às pernas.</p>
           </div>
         </article>
 
         <article class="card">
-          <img src="../visual/remada.jpeg" alt="Puxada Frontal">
+          <img src="../visual/remada.jpeg" alt="Remada Baixa na Polia">
           <div class="card-body">
             <h2>Remada Baixa na Polia</h2>
-            <span class="badge">3 séries x 10-12 reps | 60s descanso</span>
+            <span class="badge">3 séries x 10–12 reps • 60s descanso</span>
             <p>Sente-se com tronco ereto e pés apoiados na plataforma, puxando o triângulo ou barra em direção ao abdômen.</p>
           </div>
         </article>
       </div>
     </section>
 
-    
-
-  
-    <section id="dia-c" class="tab-content">
+    <section id="dia-c" class="tab-content" role="tabpanel">
       <div class="cards-grid">
         <article class="card">
-          <img src="../visual/ombro.jpeg" alt="Desenvolvimento">
+          <img src="../visual/ombro.jpeg" alt="Desenvolvimento de Ombros">
           <div class="card-body">
             <h2>Desenvolvimento de Ombros</h2>
-            <span class="badge">3 séries x 8-12 reps | 60s descanso</span>
+            <span class="badge">3 séries x 8–12 reps • 60s descanso</span>
             <p>Empurre a carga acima da cabeça mantendo o core firme e descendo até a linha do queixo.</p>
           </div>
         </article>
 
         <article class="card">
-          <img src="../visual/Swing.jpeg" alt="Puxada Frontal">
+          <img src="../visual/Swing.jpeg" alt="Swing com Kettlebell">
           <div class="card-body">
             <h2>Swing com Kettlebell</h2>
-            <span class="badge">4 séries x 15 reps | 45s descansov</span>
+            <span class="badge">4 séries x 15 reps • 45s descanso</span>
             <p>Execute uma dobradiça rápida de quadril para trás e estenda o quadril à frente para projetar o kettlebell na altura do peito. A força vem do quadril e dos glúteos, não da elevação dos ombros com os braços.</p>
           </div>
         </article>
 
         <article class="card">
-          <img src="../visual/esteira.jpeg" alt="Puxada Frontal">
+          <img src="../visual/esteira.jpeg" alt="Esteira ou Ergômetro">
           <div class="card-body">
             <h2>Esteira ou Ergômetro</h2>
-            <span class="badge">10 a 15 min | Ritmo moderado a vigoroso</span>
+            <span class="badge">10 a 15 min • Ritmo moderado a vigoroso</span>
             <p>Alterne blocos de 1 minuto em ritmo mais forte com 1 a 2 minutos em ritmo leve de recuperação, mantendo respiração controlada e postura ereta.</p>
           </div>
         </article>
       </div>
     </section>
+  </main>
 
+  <footer class="rodape">
+    <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+  </footer>
 
   <script src="acesso.js"></script>
 </body>

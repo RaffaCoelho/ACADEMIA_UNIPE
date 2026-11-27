@@ -1,43 +1,68 @@
-const form = document.getElementById('loginForm');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
-const usernameError = document.getElementById('usernameError');
-const passwordError = document.getElementById('passwordError');
-const entrar = document.getElementById('enviado');
+// Funções compartilhadas do site da Academia UNIPE
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const mainMenu = document.getElementById('mainMenu');
 
-const usuarioEsperado = 'admin';
-const senhaEsperada = '123456';
-
-form.addEventListener('submit', function(event) {
-  const usernameValue = username.value.trim();
-  console.log('Username:', usernameValue);
-
-  const passwordValue = password.value.trim();
-  console.log('Password:', passwordValue);
-
-  let formularioValido = true;
-  usernameError.textContent = '';
-  passwordError.textContent = '';
-  if (entrar) {
-    entrar.textContent = '';
+  if (menuToggle && mainMenu) {
+    menuToggle.addEventListener('click', () => {
+      const aberto = mainMenu.classList.toggle('aberto');
+      menuToggle.setAttribute('aria-expanded', String(aberto));
+    });
   }
 
-  if (usernameValue === '') {
-    usernameError.textContent = 'Digite seu usuário';
-    formularioValido = false;
+  const statusEl = document.getElementById('statusFuncionamento');
+  if (statusEl) {
+    const agora = new Date();
+    const dia = agora.getDay(); // 0 = Dom, 1-5 = Seg-Sex, 6 = Sáb
+    const hora = agora.getHours();
+    const aberta =
+      (dia >= 1 && dia <= 5 && hora >= 6 && hora < 22) ||
+      (dia === 6 && hora >= 8 && hora < 13);
+
+    statusEl.textContent = aberta ? '● Aberta agora' : '● Fechada no momento';
+    statusEl.classList.add(aberta ? 'aberta' : 'fechada');
+  }
+});
+
+// Validação simples do formulário de login
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('loginForm');
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
+  const usernameError = document.getElementById('usernameError');
+  const passwordError = document.getElementById('passwordError');
+  const togglePassword = document.getElementById('togglePassword');
+
+  if (togglePassword && passwordInput) {
+    togglePassword.addEventListener('click', () => {
+      const isPassword = passwordInput.type === 'password';
+      passwordInput.type = isPassword ? 'text' : 'password';
+      togglePassword.textContent = isPassword ? 'Ocultar' : 'Ver';
+    });
   }
 
-  if (passwordValue === '') {
-    passwordError.textContent = 'Digite sua senha';
-    formularioValido = false;
-  } else if (passwordValue.length < 6) {
-    passwordError.textContent = 'A senha deve ter pelo menos 6 caracteres';
-    formularioValido = false;
-  }
+  if (loginForm && usernameInput && passwordInput) {
+    loginForm.addEventListener('submit', (e) => {
+      let valido = true;
+      if (usernameError) usernameError.textContent = '';
+      if (passwordError) passwordError.textContent = '';
 
+      if (!usernameInput.value.trim()) {
+        if (usernameError) usernameError.textContent = 'Informe seu usuário ou matrícula.';
+        valido = false;
+      }
 
-  
-  if (!formularioValido) {
-    event.preventDefault();
+      if (!passwordInput.value.trim()) {
+        if (passwordError) passwordError.textContent = 'Informe sua senha.';
+        valido = false;
+      } else if (passwordInput.value.trim().length < 4) {
+        if (passwordError) passwordError.textContent = 'A senha deve ter pelo menos 4 caracteres.';
+        valido = false;
+      }
+
+      if (!valido) {
+        e.preventDefault();
+      }
+    });
   }
 });

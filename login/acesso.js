@@ -1,19 +1,54 @@
-const tabButtons = document.querySelectorAll('.tab-btn');
-const tabContents = document.querySelectorAll('.tab-content');
+// Funções compartilhadas do site da Academia UNIPE
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const mainMenu = document.getElementById('mainMenu');
 
-tabButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const targetId = button.getAttribute('data-tab');
+  if (menuToggle && mainMenu) {
+    menuToggle.addEventListener('click', () => {
+      const aberto = mainMenu.classList.toggle('aberto');
+      menuToggle.setAttribute('aria-expanded', String(aberto));
+    });
+  }
 
-    // Remove o estado ativo de todas as abas e conteúdos
-    tabButtons.forEach((btn) => btn.classList.remove('active'));
-    tabContents.forEach((content) => content.classList.remove('active'));
+  const statusEl = document.getElementById('statusFuncionamento');
+  if (statusEl) {
+    const agora = new Date();
+    const dia = agora.getDay(); // 0 = Dom, 1-5 = Seg-Sex, 6 = Sáb
+    const hora = agora.getHours();
+    const aberta =
+      (dia >= 1 && dia <= 5 && hora >= 6 && hora < 22) ||
+      (dia === 6 && hora >= 8 && hora < 13);
 
-    // Ativa a aba clicada e dispara a transição CSS do treino correspondente
-    button.classList.add('active');
-    const targetContent = document.getElementById(targetId);
-    if (targetContent) {
-      targetContent.classList.add('active');
-    }
+    statusEl.textContent = aberta ? '● Aberta agora' : '● Fechada no momento';
+    statusEl.classList.add(aberta ? 'aberta' : 'fechada');
+  }
+});
+
+// Troca de abas do plano de treino (Dia A, Dia B, Dia C)
+document.addEventListener('DOMContentLoaded', () => {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.tab;
+
+      tabButtons.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+
+      tabContents.forEach((content) => {
+        content.classList.remove('active');
+      });
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const alvo = document.getElementById(targetId);
+      if (alvo) {
+        alvo.classList.add('active');
+      }
+    });
   });
 });

@@ -1,79 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Unipe - Serviços e Planos</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="serviços.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços e Planos — Academia UNIPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="serviços.css">
 </head>
 <body>
-    <div class="topo-login">
-     <header>
-        <div class="img-logo">
-            <a href="../home/home.html" target="_blank" rel="noopener noreferrer">
-              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
-            </a>
-            <div class="texto-logo">
-              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
-              <p class="tagline">TREINO • FORÇA • FOCO</p>
-            </div>
+  <div class="topo-site">
+    <header class="cabecalho">
+      <div class="img-logo">
+        <a href="../home/home.html">
+          <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="52" height="52">
+        </a>
+        <div class="texto-logo">
+          <span class="name">ACADEMIA <span class="nome">UNIPE</span></span>
+          <p class="tagline">TREINO • FORÇA • FOCO</p>
         </div>
-        <nav class="menu">
-            <ul class="menu-lista">
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="../cadastro/cadastro.css">Contato</a></li>
-                <li><a href="../aulas/aulas.css">Aulas</a></li>
-                
-            </ul>
-        </nav>
-    </header>  
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <ul class="menu-lista">
+          <li><a href="../home/home.html">Home</a></li>
+          <li><a href="../aulas/aulas.html">Aulas</a></li>
+          <li><a href="serviços.html" class="ativo">Serviços</a></li>
+          <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+        </ul>
+        <div class="menu-acoes">
+          <a href="../login/login.html" class="nav-btn-login">Entrar</a>
+          <a href="../cadastro/CADASTRO.HTML" class="nav-btn-cadastro">Matricule-se</a>
+        </div>
+      </nav>
+    </header>
   </div>
 
-    <main>
-        <section class="planos-section">
-            <h2>Nossos Planos</h2>
-            <p>Escolha o plano ideal para alcançar seus objetivos na Academia Unipe.</p>
+  <main class="main-planos">
+    <section class="planos-section">
+      <div class="container">
+        <div class="planos-cabecalho">
+          <span class="selo">PLANOS E SERVIÇOS</span>
+          <h1>Nossos Planos</h1>
+          <p>Escolha a opção que melhor acompanha a sua rotina na Academia UNIPE.</p>
+        </div>
 
-            <div class="planos-grid">
-                <div class="plano-card">
-                    <h3>Plano Básico</h3>
-                    <p class="plano-preco">R$ 89,90<span>/mês</span></p>
-                    <ul>
-                        <li>Acesso livre à musculação</li>
-                        <li>Avaliação física inicial</li>
-                        <li>Sem taxa de adesão</li>
-                    </ul>
-                    <a href="../cadastro/CADASTRO.HTML" class="plano-btn">Assinar agora</a>
-                </div>
-
-                <div class="plano-card plano-destaque">
-                    <h3>Plano Performance</h3>
-                    <p class="plano-preco">R$ 119,90<span>/mês</span></p>
-                    <ul>
-                        <li>Tudo do plano Básico</li>
-                        <li>Todas as aulas coletivas inclusas</li>
-                        <li>Reavaliação física mensal</li>
-                    </ul>
-                    <a href="../cadastro/CADASTRO.HTML" class="plano-btn">Assinar agora</a>
-                </div>
-
-                <div class="plano-card">
-                    <h3>Plano Total</h3>
-                    <p class="plano-preco">R$ 159,90<span>/mês</span></p>
-                    <ul>
-                        <li>Tudo do plano Performance</li>
-                        <li>Direito a levar 1 convidado por semana</li>
-                        <li>Acesso a área VIP e recuperação</li>
-                    </ul>
-                    <a href="../cadastro/CADASTRO.HTML" class="plano-btn">Assinar agora</a>
-                </div>
+        <div class="planos-grid">
+          <article class="plano-card">
+            <div>
+              <h2>Plano Básico</h2>
+              <p class="plano-preco">R$ 89,90<span>/mês</span></p>
+              <ul>
+                <li>Acesso livre à musculação</li>
+                <li>Avaliação física inicial</li>
+                <li>Sem taxa de adesão</li>
+              </ul>
             </div>
-        </section>
-    </main>
+            <a href="../cadastro/CADASTRO.HTML" class="btn btn-secondary full-width">Assinar agora</a>
+          </article>
 
-    <footer class="rodape">
-      <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
-    </footer>
+          <article class="plano-card plano-destaque">
+            <div>
+              <span class="tag-destaque">MAIS PROCURADO</span>
+              <h2>Plano Performance</h2>
+              <p class="plano-preco">R$ 119,90<span>/mês</span></p>
+              <ul>
+                <li>Tudo do plano Básico</li>
+                <li>Todas as aulas coletivas inclusas</li>
+                <li>Reavaliação física mensal</li>
+              </ul>
+            </div>
+            <a href="../cadastro/CADASTRO.HTML" class="btn btn-primary full-width">Assinar agora</a>
+          </article>
+
+          <article class="plano-card">
+            <div>
+              <h2>Plano Total</h2>
+              <p class="plano-preco">R$ 159,90<span>/mês</span></p>
+              <ul>
+                <li>Tudo do plano Performance</li>
+                <li>Direito a levar 1 convidado por semana</li>
+                <li>Acesso a área VIP e recuperação</li>
+              </ul>
+            </div>
+            <a href="../cadastro/CADASTRO.HTML" class="btn btn-secondary full-width">Assinar agora</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="servicos.js"></script>
 </body>
 </html>

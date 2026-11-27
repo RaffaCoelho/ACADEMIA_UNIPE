@@ -1,61 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Academia UNIPE</title>
+  <title>Login — Academia UNIPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="login.css">
-  
 </head>
 <body class="painel-fundo">
-  <div class="topo-login">
-     <header>
-        <div class="img-logo">
-            <a href="../home/home.html" target="_blank" rel="noopener noreferrer">
-              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
-            </a>
-            <div class="texto-logo">
-              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
-              <p class="tagline">TREINO • FORÇA • FOCO</p>
-            </div>
+  <div class="topo-site">
+    <header class="cabecalho">
+      <div class="img-logo">
+        <a href="../home/home.html">
+          <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="52" height="52">
+        </a>
+        <div class="texto-logo">
+          <span class="name">ACADEMIA <span class="nome">UNIPE</span></span>
+          <p class="tagline">TREINO • FORÇA • FOCO</p>
         </div>
-        <nav class="menu">
-            <ul class="menu-lista">
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="../aulas/aulas.css">Aulas</a></li>
-                <li><a href="../servicos/serviços.html">Serviços</a></li>
-                <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+      </div>
 
-                
-            </ul>
-        </nav>
-    </header>  
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <ul class="menu-lista">
+          <li><a href="../home/home.html">Home</a></li>
+          <li><a href="../aulas/aulas.html">Aulas</a></li>
+          <li><a href="../servicos/serviços.html">Serviços</a></li>
+          <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+        </ul>
+        <div class="menu-acoes">
+          <a href="../cadastro/CADASTRO.HTML" class="nav-btn-cadastro">Matricule-se</a>
+        </div>
+      </nav>
+    </header>
   </div>
-<br><br>
-  <div>
-    <form class="login-form" action="acesso.html" id="loginForm" method="POST">
-      <h2>Login</h2><br>
-      <label for="username">USUARIO</label>
-      <input type="text" id="username" name="username" placeholder="USUARIO"  ><br><br>
-      <span class="input-error" id="usernameError"></span>
-      <label for="password">SENHA</label>
-      <input type="password" id="password" name="password" class="input-password" placeholder="SENHA" ><br>
-      <span class="input-error" id="passwordError"></span>
-      <a href="esqueci-senha.html" class="esqueci-senha">Esqueci minha senha</a><br><br>
 
-      
-      <button class="botao" type="submit">Entrar</button>
-      <br><br>
-      
-      <p class="cadastro">Não tem acesso? <a class="cadastro-link" href="CADASTRO.html">Matricule-se</a></p>
-    </form><br><br><br><br>
-  </div>
-  
+  <main class="area-login">
+    <form class="login-form" action="acesso.html" id="loginForm" method="GET" novalidate>
+      <div class="status-linha">
+        <span class="selo">ÁREA DO ALUNO</span>
+        <span class="status-funcionamento" id="statusFuncionamento">● Verificando horário...</span>
+      </div>
 
-  
-    <footer class="rodape">
-      <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
-    </footer>
+      <h1>Entrar na conta</h1>
+      <p class="subtitulo-form">Acesse sua ficha de treino da Academia UNIPE.</p>
+
+      <div class="campo-grupo">
+        <label for="username">Usuário ou Matrícula</label>
+        <input type="text" id="username" name="username" placeholder="Ex.: aluno.unipe" autocomplete="username">
+        <span class="input-error" id="usernameError"></span>
+      </div>
+
+      <div class="campo-grupo">
+        <label for="password">Senha</label>
+        <div class="senha-wrapper">
+          <input type="password" id="password" name="password" class="input-password" placeholder="Digite sua senha" autocomplete="current-password">
+          <button type="button" class="btn-olho" id="togglePassword" aria-label="Mostrar ou ocultar senha">Ver</button>
+        </div>
+        <span class="input-error" id="passwordError"></span>
+      </div>
+
+      <div class="acoes-auxiliares">
+        <label class="lembrar">
+          <input type="checkbox" id="rememberMe" checked>
+          <span>Manter conectado</span>
+        </label>
+        <a href="../cadastro/CADASTRO.HTML" class="link-apoio">Precisa de acesso?</a>
+      </div>
+
+      <button class="btn btn-primary full-width" type="submit">Entrar</button>
+
+      <p class="cadastro">Ainda não é aluno? <a class="cadastro-link" href="../cadastro/CADASTRO.HTML">Matricule-se</a></p>
+    </form>
+  </main>
+
+  <footer class="rodape">
+    <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="login.js"></script>
 </body>
 </html>
-<script src="login.js"></script>

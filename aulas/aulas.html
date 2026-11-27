@@ -3,60 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aulas - Academia UNIPE</title>
+  <title>Aulas — Academia UNIPE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="aulas.css">
 </head>
 <body>
-   <div class="topo-login">
-     <header>
-        <div class="img-logo">
-            <a href="../home/home.html" target="_blank" rel="noopener noreferrer">
-              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
-            </a>
-            <div class="texto-logo">
-              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
-              <p class="tagline">TREINO • FORÇA • FOCO</p>
-            </div>
+  <div class="topo-site">
+    <header class="cabecalho">
+      <div class="img-logo">
+        <a href="../home/home.html">
+          <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="52" height="52">
+        </a>
+        <div class="texto-logo">
+          <span class="name">ACADEMIA <span class="nome">UNIPE</span></span>
+          <p class="tagline">TREINO • FORÇA • FOCO</p>
         </div>
-        <nav class="menu">
-            <ul class="menu-lista">
-                <li><a href="../home/home.html">Home</a></li>
-                <li><a href="../cadastro/cadastro.css">Contato</a></li>
-                <li><a href="../aulas/aulas.css">Aulas</a></li>
-                
-            </ul>
-        </nav>
-        
-    </header>  
-  <section id="aulas">
-    <h1 class="inicio">HORÁRIOS DE AULAS</h1>
+      </div>
 
-    <div class="tabela-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Dia</th>
-            <th>Horário</th>
-            <th>Aula</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Segunda</td><td>07h</td><td>Funcional</td></tr>
-          <tr><td>Segunda</td><td>19h</td><td>HIIT</td></tr>
-          <tr><td>Terça</td><td>08h</td><td>Yoga</td></tr>
-          <tr><td>Terça</td><td>18h</td><td>Spinning</td></tr>
-          <tr><td>Quarta</td><td>19h</td><td>Funcional</td></tr>
-          <tr><td>Quinta</td><td>07h</td><td>Alongamento</td></tr>
-          <tr><td>Quinta</td><td>19h</td><td>HIIT</td></tr>
-          <tr><td>Sexta</td><td>18h</td><td>Zumba</td></tr>
-          <tr><td>Sábado</td><td>09h</td><td>Aulão de Spinning</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section><br><br>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <ul class="menu-lista">
+          <li><a href="../home/home.html">Home</a></li>
+          <li><a href="aulas.html" class="ativo">Aulas</a></li>
+          <li><a href="../servicos/serviços.html">Serviços</a></li>
+          <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+        </ul>
+        <div class="menu-acoes">
+          <a href="../login/login.html" class="nav-btn-login">Entrar</a>
+          <a href="../cadastro/CADASTRO.HTML" class="nav-btn-cadastro">Matricule-se</a>
+        </div>
+      </nav>
+    </header>
+  </div>
+
+  <main class="container main-aulas">
+    <section class="aulas-box">
+      <div class="status-linha">
+        <span class="selo">GRADE SEMANAL</span>
+        <span class="status-funcionamento" id="statusFuncionamento">● Verificando horário...</span>
+      </div>
+      <h1 class="inicio">Horários de Aulas</h1>
+      <p class="descricao-aulas">Confira as aulas coletivas disponíveis durante a semana e filtre por dia se preferir.</p>
+
+      <div class="filtros-dia" id="filtrosDia">
+        <button type="button" class="filtro-btn active" data-dia="todos">Todos</button>
+        <button type="button" class="filtro-btn" data-dia="Segunda">Segunda</button>
+        <button type="button" class="filtro-btn" data-dia="Terça">Terça</button>
+        <button type="button" class="filtro-btn" data-dia="Quarta">Quarta</button>
+        <button type="button" class="filtro-btn" data-dia="Quinta">Quinta</button>
+        <button type="button" class="filtro-btn" data-dia="Sexta">Sexta</button>
+        <button type="button" class="filtro-btn" data-dia="Sábado">Sábado</button>
+      </div>
+
+      <div class="tabela-wrapper">
+        <table id="tabelaAulas">
+          <thead>
+            <tr>
+              <th>Dia</th>
+              <th>Horário</th>
+              <th>Aula</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-dia="Segunda"><td>Segunda</td><td>07h</td><td>Funcional</td></tr>
+            <tr data-dia="Segunda"><td>Segunda</td><td>19h</td><td>HIIT</td></tr>
+            <tr data-dia="Terça"><td>Terça</td><td>08h</td><td>Yoga</td></tr>
+            <tr data-dia="Terça"><td>Terça</td><td>18h</td><td>Spinning</td></tr>
+            <tr data-dia="Quarta"><td>Quarta</td><td>19h</td><td>Funcional</td></tr>
+            <tr data-dia="Quinta"><td>Quinta</td><td>07h</td><td>Alongamento</td></tr>
+            <tr data-dia="Quinta"><td>Quinta</td><td>19h</td><td>HIIT</td></tr>
+            <tr data-dia="Sexta"><td>Sexta</td><td>18h</td><td>Zumba</td></tr>
+            <tr data-dia="Sábado"><td>Sábado</td><td>09h</td><td>Aulão de Spinning</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
   <footer class="rodape">
-      <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
-    </footer>
+    <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="aulas.js"></script>
 </body>
 </html>

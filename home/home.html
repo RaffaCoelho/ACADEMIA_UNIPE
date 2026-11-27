@@ -1,107 +1,160 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academia Unipe-HOME</title>
-    <link rel="stylesheet" href="home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia UNIPE — Início</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div class="topo-login">
-     <header>
-        <div class="img-logo">
-            <a href="home.html" target="_blank" rel="noopener noreferrer">
-              <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="60" height="60" />
-            </a>
-            <div class="texto-logo">
-              <h1 class="name">ACADEMIA <span class="nome">UNIPE</span></h1>
-              <p class="tagline">TREINO • FORÇA • FOCO</p>
-            </div>
+  <div class="topo-site">
+    <header class="cabecalho">
+      <div class="img-logo">
+        <a href="home.html">
+          <img src="../visual/logo-unipe.png" alt="Logo da Academia UNIPE" width="52" height="52">
+        </a>
+        <div class="texto-logo">
+          <span class="name">ACADEMIA <span class="nome">UNIPE</span></span>
+          <p class="tagline">TREINO • FORÇA • FOCO</p>
         </div>
-        <nav class="menu">
-            <ul class="menu-lista">
-                <li><a href="../sobre nos/sobre.html">Sobre</a></li>
-                <li><a href="../aulas/aulas.html">Aulas</a></li>
-                <li><a href="../servicos/serviços.html">Serviços</a></li>
-                
-                
-            </ul>
-        </nav>
-    </header>  
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="menu" id="mainMenu" aria-label="Navegação principal">
+        <ul class="menu-lista">
+          <li><a href="home.html" class="ativo">Home</a></li>
+          <li><a href="../aulas/aulas.html">Aulas</a></li>
+          <li><a href="../servicos/serviços.html">Serviços</a></li>
+          <li><a href="../sobre nos/sobre.html">Sobre</a></li>
+          <li><a href="#horarios">Horários</a></li>
+        </ul>
+        <div class="menu-acoes">
+          <a href="../login/login.html" class="nav-btn-login">Entrar</a>
+          <a href="../cadastro/CADASTRO.HTML" class="nav-btn-cadastro">Matricule-se</a>
+        </div>
+      </nav>
+    </header>
   </div>
-     <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <span class="tag">SAÚDE • FORÇA • PERFORMANCE</span>
-        <h1>Transforme sua rotina dentro do campus <span>UNIPÊ</span>.</h1>
-        <p>
-          Treinos personalizados, acompanhamento profissional e estrutura completa 
-          para estudantes, docentes e comunidade acadêmica.
-        </p>
-        <div class="hero-buttons">
-          <a href="../cadastro/CADASTRO.HTML" class="btn btn-primary btn-lg">Começar Agora</a>
-          <a href="../login/login.html" class="btn btn-secondary btn-lg">Acessar Meu Treino</a>
-        </div>
 
-        <div class="hero-stats">
-          <div>
-            <strong>+1.200</strong>
-            <span>Alunos ativos</span>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <div class="status-linha">
+            <span class="selo">CAMPUS UNIPÊ • JOÃO PESSOA</span>
+            <span class="status-funcionamento" id="statusFuncionamento">● Verificando horário...</span>
           </div>
-          <div>
-            <strong>06h às 22h</strong>
-            <span>Seg a Sex</span>
+
+          <h1>Transforme sua rotina de treino dentro do <span>UNIPÊ</span>.</h1>
+          <p>
+            Acompanhamento de treinos, aulas coletivas e planos pensados para quem quer
+            manter constância com estrutura acessível no dia a dia.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="../cadastro/CADASTRO.HTML" class="btn btn-primary">Fazer Matrícula</a>
+            <a href="../login/login.html" class="btn btn-secondary">Acessar Minha Ficha</a>
           </div>
-          <div>
-            <strong>100%</strong>
-            <span>Avaliação física</span>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <strong>+1.200</strong>
+              <span>Alunos ativos</span>
+            </div>
+            <div class="stat-item">
+              <strong>3x / sem</strong>
+              <span>Rotina sugerida</span>
+            </div>
+            <div class="stat-item">
+              <strong>40–50 min</strong>
+              <span>Tempo médio</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="card-highlight">
+            <span class="badge-amarelo">PORTAL DO ALUNO</span>
+            <h2>Sua ficha na palma da mão</h2>
+            <p>Visualize os exercícios dos Dias A, B e C com orientações de séries, descanso e execução.</p>
+            <ul>
+              <li>Dia A: Agachamento e Empurrar</li>
+              <li>Dia B: Puxar e Quadril</li>
+              <li>Dia C: Força e Condicionamento</li>
+            </ul>
+            <a href="../login/login.html" class="btn btn-primary full-width">Abrir Área do Aluno</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="secao-topo">
+          <span class="selo">O QUE VOCÊ ENCONTRA</span>
+          <h2>Estrutura e acompanhamento</h2>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card-info">
+            <span class="card-num">01</span>
+            <h3>Musculação Guiada</h3>
+            <p>Séries organizadas por objetivo com foco em técnica, segurança e progressão gradual.</p>
+          </article>
+
+          <article class="card-info">
+            <span class="card-num">02</span>
+            <h3>Aulas Coletivas</h3>
+            <p>Funcional, HIIT, Yoga, Spinning, Alongamento e Zumba distribuídas ao longo da semana.</p>
+          </article>
+
+          <article class="card-info">
+            <span class="card-num">03</span>
+            <h3>Planos Flexíveis</h3>
+            <p>Opções para diferentes rotinas de treino, com matrícula rápida e direta.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="horarios" class="secao secao-faixa">
+      <div class="container horarios-grid">
+        <div>
+          <span class="selo">FUNCIONAMENTO</span>
+          <h2>Horários da academia</h2>
+          <p>Escolha o melhor horário entre aulas, trabalho ou compromissos do dia.</p>
+        </div>
+
+        <div class="horarios-lista">
+          <div class="horario-linha">
+            <span>Segunda a Sexta</span>
+            <strong>06:00 — 22:00</strong>
+          </div>
+          <div class="horario-linha">
+            <span>Sábados</span>
+            <strong>08:00 — 13:00</strong>
+          </div>
+          <div class="horario-linha fechado">
+            <span>Domingos e Feriados</span>
+            <strong>Fechado</strong>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="hero-card">
-        <div class="card-highlight">
-          <span class="badge-yellow">NOVO</span>
-          <h3>Portal do Aluno</h3>
-          <p>Acompanhe sua ficha de treino A, B e C direto pelo celular ou computador.</p>
-          <ul>
-            <li>Fichas com imagens demonstrativas</li>
-            <li>Controle de séries, cargas e descanso</li>
-            <li>Agendamento rápido de avaliação</li>
-          </ul>
-          <a href="../login/login.html" class="btn btn-primary full-width">Ir para o Login</a>
-        </div>
-      </div>
-    </div>
-  </section>
-   <section id="horarios" class="section section-alt">
-    <div class="container horarios-box">
-      <div>
-        <h2>Horários de <span>Funcionamento</span></h2>
-        <p>Organize seu treino entre as aulas ou no seu melhor horário do dia.</p>
-      </div>
-      <div class="horarios-list">
-        <div class="horario-item">
-          <span>Segunda a Sexta</span>
-          <strong>06:00 — 22:00</strong>
-        </div>
-        <div class="horario-item">
-          <span>Sábados</span>
-          <strong>08:00 — 13:00</strong>
-        </div>
-        <div class="horario-item">
-          <span>Domingos e Feriados</span>
-          <strong>Fechado</strong>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer class="rodape">
+    <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
+  </footer>
 
-    
-    <footer class="rodape">
-      <p>&copy; 2026 Academia UNIPE. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="home.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>
